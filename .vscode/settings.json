@@ -1,0 +1,32 @@
+{
+  // Terminal Profile Definitions with Colors
+
+  // Restore Terminals Configuration
+  "restoreTerminals.runOnStartup": true,
+  "restoreTerminals.terminals": [
+    {
+      "splitTerminals": [
+        {
+          "name": "Vue",
+          "commands": ["cd ./frontend"]
+        },
+        {
+          "name": "Go",
+          "commands": ["cd ./backend"]
+        }
+      ]
+    },
+    {
+      "splitTerminals": [
+        {
+          "name": "NPM",
+          "commands": ["cd ./frontend"]
+        }
+      ]
+    }
+  ],
+
+  // Optional: Custom Terminal Appearance Customizations
+  "terminal.integrated.tabs.defaultColor": "terminal.ansiGreen",
+  "terminal.integrated.tabs.defaultIcon": "code"
+}
