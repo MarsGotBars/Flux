@@ -7,25 +7,41 @@
 <template>
   <article>
     <p>
-      Trending<span> - </span><a href="">Movie</a> <span> - </span>Trending<span> - </span><a href="">Movie</a><span> - </span>
+      Trending<span> - </span><a href="">Movie</a> <span> - </span>Trending<span> - </span
+      ><a href="">Movie</a><span> - </span> Trending
+    </p>
+  </article>
+  <article>
+    <p>
+      Trending<span> - </span><a href="">Movie</a> <span> - </span>Trending<span> - </span
+      ><a href="">Movie</a><span> - </span> Trending
     </p>
   </article>
 </template>
 
 <!-- incorrect... retry -->
-<style scoped>
+<style lang="css" scoped>
 article {
   position: fixed;
-  left: -1%;
-  top: 0%;
-  width: 72px;
+  left: 0;
+  top: 0;
+  width: calc(4rem / 100 * 80);
   height: var(--spacing-xl);
   rotate: 90deg;
   display: flex;
   align-items: center;
   line-height: 1;
+  will-change: transform;
+  &:nth-of-type(2){
+    right: 0;
+  }
 }
 p {
+  font-weight: 500;
+  > * {
+    font-weight: 500;
+    line-height: 80%;
+  }
   display: inline-block;
   text-wrap: nowrap;
   color: var(--gray);
@@ -44,9 +60,9 @@ p {
 }
 @keyframes scroller {
   from {
-    transform: translateX(0%);
+    transform: translateX(-10%);
   }
-  to{
+  to {
     transform: translateX(-50%);
   }
 }
