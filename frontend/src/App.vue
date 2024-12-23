@@ -1,10 +1,11 @@
 <script setup>
-
+import Trending from './components/Trending.vue';
 </script>
 
 <template>
-<p>this is some text</p>
+    <Trending/>
 </template>
 
 <style scoped>
+
 </style>
