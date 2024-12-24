@@ -2,6 +2,7 @@
 import { ref } from "vue";
 import ToggleBtn from './components/toggleBtn/ToggleBtn.vue'
 import Trending from "./components/scroller/Trending.vue";
+import ResultList from "./components/ResultList/ResultList.vue"
 let data = ref([]);
 const query = "Inception"; // Example query
 fetch(
@@ -11,7 +12,7 @@ fetch(
 )
   .then((response) => response.json())
   .then((fetchedData) => {
-    console.log(fetchedData); // Handle the search results
+    // console.log(fetchedData); // Handle the search results
     data.value = fetchedData.results; // Assign the results to the reactive data variable
   })
   .catch((error) => {
@@ -22,8 +23,7 @@ fetch(
 <template>
     <h1>movie<span>ender</span></h1>
   <ToggleBtn label="test" initValue="value1" secondaryValue="value2" />
-  <ul v-if="data">
-    <li v-for="(item, index) in data" :key="index">{{ item }}</li>
-  </ul>
+  <ResultList :movieData='data' v-if="data" />
+  
   <Trending />
 </template>
