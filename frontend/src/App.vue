@@ -6,7 +6,7 @@ import ResultList from './components/ResultList/ResultList.vue'
 let data = ref([])
 const fetchMovies = (query) =>
   fetch(
-    `http://localhost:8080/search/movie?query=${encodeURIComponent(
+    `https://flux-backend-dqd9.onrender.com/search/movie?query=${encodeURIComponent(
       query,
     )}&include_adult=false&language=en-US&page=1`,
   )
@@ -20,7 +20,7 @@ const fetchMovies = (query) =>
 const handleSearch = (query) => {
   fetchMovies(query)
 }
-handleSearch("minecraft")
+handleSearch("Alien")
 </script>
 
 <template>

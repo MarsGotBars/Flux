@@ -39,4 +39,8 @@ h2 {
     font-weight: 500;
   }
 }
+
+ul{
+  display: flex;
+}
 </style>
