@@ -1,29 +1,32 @@
 <script setup>
-import { ref } from "vue";
-import ToggleBtn from './components/toggleBtn/ToggleBtn.vue'
-import Trending from "./components/scroller/Trending.vue";
-import ResultList from "./components/ResultList/ResultList.vue"
-let data = ref([]);
-const query = "Inception"; // Example query
-fetch(
-  `http://localhost:8080/search/movie?query=${encodeURIComponent(
-    query
-  )}&include_adult=false&language=en-US&page=1`
-)
-  .then((response) => response.json())
-  .then((fetchedData) => {
-    // console.log(fetchedData); // Handle the search results
-    data.value = fetchedData.results; // Assign the results to the reactive data variable
-  })
-  .catch((error) => {
-    console.error("Error:", error); // Handle any errors
-  });
+import { ref } from 'vue'
+import Trending from './components/Scroller/Trending.vue'
+import ResultList from './components/ResultList/ResultList.vue'
+import Form from './components/Form/Form.vue'
+let data = ref([])
+const fetchMovies = (query) =>
+  fetch(
+    `http://localhost:8080/search/movie?query=${encodeURIComponent(
+      query,
+    )}&include_adult=false&language=en-US&page=1`,
+  )
+    .then((response) => response.json())
+    .then((fetchedData) => {
+      data.value = fetchedData.results // Assign the results to the reactive data variable
+    })
+    .catch((error) => {
+      console.error('Error:', error) // Handle any errors
+    })
+const handleSearch = (query) => {
+  fetchMovies(query)
+}
+handleSearch("minecraft")
 </script>
 
 <template>
-    <h1>movie<span>ender</span></h1>
-  <ToggleBtn label="test" initValue="value1" secondaryValue="value2" />
-  <ResultList :movieData='data' v-if="data" />
-  
+  <h1>movie<span>ender</span></h1>
+  <Form/>
+  <ResultList :movieData="data" />
+
   <Trending />
 </template>

@@ -1,16 +1,29 @@
+@font-face {
+  font-family: Rubik;
+  src: url('./fonts/Rubik-VariableFont_wght.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: Archivo;
+  src: url('./fonts/Archivo-VariableFont.woff2') format('woff2');
+}
 :root {
   --black: #3a3335;
   --pink: #d81e5b;
   --white: #ffffff;
   --gray: #c6d8d3;
+  --important: #0ed2f7;
 
-  --spacing-xs: 0.75rem;
-  --spacing-sm: 1rem;
+  --spacing-xs: 1rem;
+  --spacing-sm: 1.5rem;
   --spacing-md: 2rem;
   --spacing-lg: 3rem;
-  --spacing-xl: 4.5rem;
+  --spacing-xl: 4rem;
   --spacing-xxl: 4.5rem;
   --spacing-xxxl: 6rem;
+
+  --main-font: Rubik, 'Segoe UI', Tahoma, Geneva, Verdana;
+  --alt-font: Arhcivo, sans-serif;
 }
 
 /* semantic color variables for this project */
@@ -31,15 +44,12 @@
 *::after {
   box-sizing: border-box;
   margin: 0;
+  padding: 0;
   font-weight: normal;
 }
 
-@font-face {
-  font-family: Rubik;
-  src: url('./fonts/Rubik-VariableFont_wght.woff2') format('woff2');
-}
-
 body {
+  overflow-y: hidden;
   min-height: 100vh;
   color: var(--color-text);
   background: var(--color-background);
@@ -47,21 +57,44 @@ body {
     color 0.5s,
     background-color 0.5s;
   line-height: 1;
-  font-family:
-    Rubik,
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    Oxygen,
-    Ubuntu,
-    Cantarell,
-    'Fira Sans',
-    'Droid Sans',
-    'Helvetica Neue',
-    sans-serif;
-  font-size: 1rem;
+  font-family: var(--main-font);
+  font-size: var(--spacing-xs);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+a{
+  text-decoration: none;
+}
+
+.xxxl {
+  font-size: clamp(var(--spacing-xl), 3vw, var(--spacing-xxxl));
+  font-weight: 500;
+}
+.xxl {
+  font-weight: 500;
+  font-size: clamp(var(--spacing-md), 3vw, var(--spacing-xxl));
+}
+.xl {
+  font-weight: 500;
+  font-size: clamp(var(--spacing-sm), 3vw, var(--spacing-xl));
+}
+.lg {
+  font-weight: 500;
+  color: var(--gray);
+  text-transform: uppercase;
+  font-size: clamp(var(--spacing-sm), 3vw, var(--spacing-lg));
+}
+.md {
+  font-size: clamp(var(--spacing-xs), 3vw, var(--spacing-md));
+}
+.sm {
+  font-size: clamp(var(--spacing-xs), 3vw, var(--spacing-sm));
+  font-weight: 600;
+}
+
+::selection{
+  color: var(--important);
+  background: var(--pink);
 }
