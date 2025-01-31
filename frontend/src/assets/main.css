@@ -3,14 +3,17 @@
 #app {
   max-width: 1440px;
   width: 100%;
-  padding: 1.5rem 3rem;
+  padding: var(--spacing-sm) 3rem;
   font-weight: normal;
   height: 200vh;
   display: grid;
   margin: 0 auto;
+  gap: var(--spacing-sm) var(--spacing-md);
   > * {
     grid-column: 1 / -1;
-    place-items: center;
+    > :nth-child(1){
+      margin-bottom: .75rem;
+    }
   }
 }
 
