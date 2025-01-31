@@ -12,10 +12,10 @@ const fetchMovies = (query) =>
   )
     .then((response) => response.json())
     .then((fetchedData) => {
-      data.value = fetchedData.results // Assign the results to the reactive data variable
+      data.value = fetchedData.results
     })
     .catch((error) => {
-      console.error('Error:', error) // Handle any errors
+      console.error('Error:', error)
     })
 const handleSearch = (query) => {
   fetchMovies(query)

@@ -4,18 +4,18 @@ import { onMounted, watch } from 'vue'
 const props = defineProps({
   items: {
     type: Array,
-    default: () => [], // Only default value, not required
+    default: () => [],
   },
 })
 
 onMounted(() => {
-  console.log('movieData in Result:', props) // Check if movieData is passed correctly
+  console.log('movieData in Result:', props)
 })
 
 watch(
   () => props,
   (newVal) => {
-    console.log('movieData changed:', newVal) // Watch for changes in movieData
+    console.log('movieData changed:', newVal)
   },
 )
 </script>

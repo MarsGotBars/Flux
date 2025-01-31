@@ -16,7 +16,7 @@ defineProps({
 </template>
 
 <style scoped>
-/* Your styles here */
+
 button{
   display: block;
   border: none;
