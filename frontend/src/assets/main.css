@@ -3,17 +3,16 @@
 #app {
   max-width: 1440px;
   width: 100%;
-  padding: var(--spacing-sm) 3rem;
+  margin: 0 auto;
+  padding: var(--spacing-sm) calc(var(--spacing-xxl) + 2vw);
   font-weight: normal;
-  height: 200vh;
   display: grid;
   margin: 0 auto;
+  position: relative;
   gap: var(--spacing-sm) var(--spacing-md);
+  grid-auto-rows: min-content;
   > * {
     grid-column: 1 / -1;
-    > :nth-child(1){
-      margin-bottom: .75rem;
-    }
   }
 }
 
@@ -43,8 +42,8 @@ h1 {
 
 @media (min-width: 1024px) {
   body {
-    display: flex;
-    place-items: center;
+    /* display: flex;
+    place-items: center; */
   }
 
   #app {

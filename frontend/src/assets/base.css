@@ -7,6 +7,7 @@
   font-family: Archivo;
   src: url('./fonts/Archivo-VariableFont.woff2') format('woff2');
 }
+
 :root {
   --black: #3a3335;
   --pink: #d81e5b;
@@ -23,7 +24,7 @@
   --spacing-xxxl: 6rem;
 
   --main-font: Rubik, 'Segoe UI', Tahoma, Geneva, Verdana;
-  --alt-font: Arhcivo, sans-serif;
+  --alt-font: Archivo, sans-serif;
 }
 
 /* semantic color variables for this project */

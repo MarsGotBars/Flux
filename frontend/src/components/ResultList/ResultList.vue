@@ -1,6 +1,6 @@
 <script setup>
 import { watch, onMounted } from 'vue'
-import Result from '../Result/Result.vue'
+import ResultItems from '../ResultItems/ResultItems.vue'
 
 const props = defineProps({
   movieData: {
@@ -20,7 +20,7 @@ watch(
   <section v-if="movieData && movieData.length">
     <h2 class="lg"><span>{{ movieData.length }}</span> Results</h2>
     <ul>
-      <Result :items="movieData" />
+      <ResultItems :items="movieData" />
     </ul>
   </section>
   <p v-else>No movies available.</p>
