@@ -60,9 +60,10 @@ input {
   left: 0;
   z-index: 1;
   height: 100%;
-  width: calc(50% - .1875rem);
-  transition: 0.3s ease;
-  border-radius: 1.125rem;
+  width: 100%;
+  transition: 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  border-radius: .75rem;
+  transform: translateX(-50%);
 }
 
 input:focus + .container,
@@ -70,22 +71,29 @@ input:focus-within + .container {
   outline: var(--important) solid 5px;
 }
 
-input:focus + .container::after{
-    transform: scaleX(1.2);
-}
-
 input + .container::after {
   background-color: var(--pink);
 }
 
+label input:checked + .container::after {
+    transform: translateX(50%);
+}
 /* not a perfect implementation */
 
 label:hover input + .container::after {
-    transform: scaleX(1.2);
+    transform: translateX(-50%) scaleX(1.1);
 }
 
-label input:checked + .container::after {
-    transform: translateX(calc(100% + .375rem));
+label:hover input:checked + .container::after {
+    transform: translateX(50%) scaleX(1.1);
+}
+
+input:focus + .container::after{
+    transform: translateX(-50%) scaleX(1.1);
+}
+
+input:checked:focus + .container::after{
+    transform: translateX(50%) scaleX(1.1);
 }
 
 p{
